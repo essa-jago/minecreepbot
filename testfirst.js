@@ -3,7 +3,17 @@ const Movements = require('mineflayer-pathfinder').Movements;
 const pathfinder = require('mineflayer-pathfinder').pathfinder;
 const { GoalFollow } = require('mineflayer-pathfinder').goals;
 const readline = require('readline');
+const express = require('express');
 
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send('Bot has arrived');
+});
+
+app.listen(8000, () => {
+  console.log('Server started on port 8000');
+});
 
 function creabotpls(){
 
