@@ -10,7 +10,7 @@ function creabotpls(){
     const bot = mineflayer.createBot({
     host: 'nyawitsmp.mcsh.io', // Server IP
     port: 25565,       // Server Port
-    username: `oppurtnitybot2`, // igntest${Number(Math.random() * (1000, 9999)).toFixed(0)}
+    username: `oppurtnitybot22`, // igntest${Number(Math.random() * (1000, 9999)).toFixed(0)}
     version: '1.20.1'  // Optional: specify version
     })
     bot.loadPlugin(pathfinder);
@@ -108,8 +108,18 @@ function creabotpls(){
             }, 3000);
     });
 
-    bot.on('kicked', console.log)
-    bot.on('error', console.log)
+    bot.on('kicked', () => {
+            setTimeout(() => {
+                creabotpls();
+                console.log("testing ending kicked")
+            }, 3000);
+    });
+    bot.on('error', () => {
+            setTimeout(() => {
+                creabotpls();
+                console.log("testing ending banned")
+            }, 3000);
+    });
 }
 
 creabotpls()
